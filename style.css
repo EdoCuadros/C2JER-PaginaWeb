@@ -134,7 +134,7 @@ body {
     padding: 0 250px;
     margin-bottom: 25px;
 }
-
+/* Gestión de la producción */
 .gestion_produccion {
     padding: 100px 0;
     background-color: #E1E2E6;
@@ -185,9 +185,10 @@ body {
 
 .proceso-group {
     display: flex;
+    justify-content: space-between;
 }
 
-.proceso-content h2 {
+.proceso-content > h2 {
     font-size: 25px;
     line-height: 70px;
     color: #323337;
@@ -196,17 +197,18 @@ body {
     margin-bottom: 15px;
     text-align: center;
 }
-
-.proceso-group img {
-    width: 800px;
-    height: 807px;
-    padding: 20px;
+.proceso-content p {
+    margin-bottom: 20px;
+    padding: 0 30px;
+}
+.tab {
     margin-top: 20px;
 }
-
-.proceso-group p {
-    padding: 30px;
-    margin-top: 50px;
+.proceso-group img {
+    width: 900px;
+    height: 1009px;
+    padding: 60px 0 0 0;
+    margin-top: 20px;
 }
 
 .propuesta-content h2{
@@ -253,7 +255,10 @@ body {
     padding: 20px;
     color: #F9FAFC;
 }
-
+.container-2 .img_ev {
+    padding: 0 50px;
+    height: 800px;
+}
 .industria4-content {
     text-align: center;
 }
@@ -306,6 +311,7 @@ body {
 .celda_rob-group img {
     height: 500px;
     padding: 20px;
+    margin-right: 30px;
 }
 .celda_rob-group h3{
     margin-left: 50px;
@@ -315,6 +321,7 @@ body {
 
 .celda_rob-group p {
     padding: 50px;
+    text-align: justify;
 }
 
 .celda_rob-group-2 {
@@ -346,11 +353,24 @@ body {
     margin-top: 30px;
     text-align: center;
 }
-
+.container-dig_fac {
+    display: flex;
+    max-width: 1800px;
+}
+.container-dig_fac .dig_fac-1 p {
+    padding: 50px 0;
+    max-width: 600px;
+    margin-left: 50px;
+    margin-right: 80px;
+}
+.container-dig_fac .dig_fac-1 iframe {
+    margin-right: 80px;
+    margin-left: 0px;
+}
 .scada-content {
     text-align: center;
 }
-.scada-content h2 {
+.scada-content > h2 {
     font-size: 55px;
     line-height: 70px;
     color: #305ada;
@@ -360,6 +380,13 @@ body {
     text-align: center;
 }
 
+.scada-container {
+    display: flex;    
+}
+.scada-container .scada-1 {
+    padding: 0 50px;
+    margin-bottom: 20px;
+}
 
 .about {
     background: #efefef;
@@ -456,3 +483,147 @@ body {
     margin-top: 30px;
     text-align: center;
 }
+
+/* Tarjetas desplegables */
+
+.card-container {
+    margin: 0 40px;
+    max-width: 600px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  .card-container .tab {
+    position: relative;
+    background: #e9e6e6e1;
+    padding: 0 20px 20px;
+    box-shadow: 0 15px 15px rgba(0, 0, 0, 0.05);
+    border-radius: 5px;
+    overflow: hidden;
+  }
+  .card-container .tab input {
+    -webkit-appearance: none;
+       -moz-appearance: none;
+            appearance: none;
+  }
+
+  .card-container .tab input:checked ~ label::after {
+    content: " ";
+    color: rgb(57, 45, 226);
+    transform: rotate(135deg);
+  }
+  .card-container .tab input:checked ~ label h2 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    color: rgba(255, 255, 255, 0.2);
+    font-size: 7em;
+    justify-content: flex-end;
+    padding: 20px;
+  }
+  .card-container .tab input:checked ~ label h3 {
+    background: #fff;
+    padding: 2px 10px;
+    color: #333;
+    border-radius: 2px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  }
+  .card-container .tab input:checked ~ .card-content {
+    max-height: 100vh;
+    transition: 1s;
+  }
+  .card-container .tab input:checked ~ .card-content p {
+    color: #fff;
+    margin-bottom: 0;
+    padding: 20px 0 0 0;
+  }
+  .card-container .tab label {
+    display: inline-block;
+    display: flex;
+    margin-bottom: 0px;
+    align-items: center;
+    cursor: pointer;
+    height: 10px;
+  }
+  .card-container .tab label::after {
+    content: "+";
+    position: absolute;
+    right: 20px;
+    font-size: 2em;
+    color: rgba(0, 0, 0, 0.1);
+    transition: transform 1s;
+  }
+  .card-container .tab label h2 {
+    width: 35px;
+    height: 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    font-size: 1.25em;
+    border-radius: 5px;
+    margin-right: 10px;
+  }
+  .card-container .tab label h3 {
+    position: relative;
+    font-weight: 500;
+    font-size: 18px;
+    color: #333;
+    z-index: 10;
+
+
+  }
+  .card-container .tab:hover label::after {
+    color: #333;
+  }
+  .card-container .tab .card-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: 1s;
+  }
+  .card-container .tab .card-content p {
+    position: relative;
+    padding: 10px 0;
+    color: #333;
+    z-index: 10;
+  }
+  .card-container .tab:nth-child(1) label h2 {
+    background: linear-gradient(135deg, #107acc 10%, #2898ee 100%);
+  }
+  .card-container .tab:nth-child(2) label h2 {
+    background: linear-gradient(135deg, #107acc 10%, #2898ee 100%);
+  }
+  .card-container .tab:nth-child(3) label h2 {
+    background: linear-gradient(135deg, #107acc 10%, #2898ee 100%);
+  }
+  .card-container .tab:nth-child(4) label h2 {
+    background: linear-gradient(135deg, #107acc 10%, #2898ee 100%);
+  }
+  .card-container .tab:nth-child(5) label h2 {
+    background: linear-gradient(135deg, #107acc 10%, #2898ee 100%);
+  }
+  .card-container .tab:nth-child(6) label h2 {
+    background: linear-gradient(135deg, #107acc 10%, #2898ee 100%);
+  }
+  .card-container .tab:nth-child(7) label h2 {
+    background: linear-gradient(135deg, #107acc 10%, #2898ee 100%);
+  }
+  .card-container .tab:nth-child(8) label h2 {
+    background: linear-gradient(135deg, #107acc 10%, #2898ee 100%);
+  }
+  .card-container .tab:nth-child(9) label h2 {
+    background: linear-gradient(135deg, #107acc 10%, #2898ee 100%);
+  }
+  .card-container .tab:nth-child(10) label h2 {
+    background: linear-gradient(135deg, #107acc 10%, #2898ee 100%);
+  }
+  .card-container .tab:nth-child(11) label h2 {
+    background: linear-gradient(135deg, #107acc 10%, #2898ee 100%);
+  }
+  .card-container .tab:nth-child(12) label h2 {
+    background: linear-gradient(135deg, #107acc 10%, #2898ee 100%);
+  }
+  
+  /*# sourceMappingURL=style.css.map */
